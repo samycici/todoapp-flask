@@ -23,11 +23,11 @@ dependencies:
 
 test:
   override:
-    - cd todoapp && nosetests test/unit_tests.py --with-xunit --with-coverage --cover-inclusive --cover-package=todoapp --cover-html
+    - cd todoapp && nosetests tests/unit_tests.py --with-xunit --with-coverage --cover-inclusive --cover-package=todoapp --cover-html
     - cd todoapp && nosetests fixtures/fixtures_tests.py --with-xunit
     - sudo service postgresql stop && sleep 10
     - docker-compose up -d && sleep 15
-    - python todoapp/test/functional_tests.py
+    - python todoapp/tests/functional_tests.py
     - locust --no-web -c 1 -r 1 -n 4 --only-summary --print-stats
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
