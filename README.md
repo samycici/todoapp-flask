@@ -1,4 +1,4 @@
-# todoapp-flask [![Circle CI](https://circleci.com/gh/stefanteixeira/todoapp-flask.svg?style=shield)](https://circleci.com/gh/stefanteixeira/todoapp-flask)
+# todoapp-flask [![Circle CI](https://circleci.com/gh/samycici/todoapp-flask.svg?style=shield)](https://circleci.com/gh/samycici/todoapp-flask)
 
 To init a PostgreSQL database container for the project:
 
