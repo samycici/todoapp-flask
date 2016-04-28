@@ -1,33 +1,22 @@
-from datetime import datetime
-from flask import Flask, request, flash, url_for, redirect, render_template, abort
+# -*- coding: utf-8 -*-
+from flask import Flask, request, flash, url_for, redirect, render_template, abort, Response
 from flask_sqlalchemy import SQLAlchemy
+import os
 
 app = Flask(__name__)
 
-app.config.from_pyfile('app.cfg')
+app.config.from_object(os.environ['APP_SETTINGS'])
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-class Todo(db.Model):
-    __tablename__ = "todos"
-    id = db.Column('todo_id', db.Integer, primary_key=True)
-    title = db.Column(db.String(60))
-    text = db.Column(db.String)
-    done = db.Column(db.Boolean)
-    pub_date = db.Column(db.DateTime)
+from models import *
 
-    def __init__(self, title, text):
-        self.title = title
-        self.text = text
-        self.done = False
-        self.pub_date = datetime.utcnow()
-
-db.create_all()
-
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
     return render_template('index.html',
         todos = Todo.query.order_by(Todo.pub_date.desc()).all()
     )
+
 
 @app.route('/new/', methods=['GET', 'POST'])
 def new():
@@ -48,6 +37,14 @@ def show_or_update(todo_id):
     todo_item.done = ('done.%d' % todo_id) in request.form
     db.session.commit()
     return redirect(url_for('index'))
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template('500.html'), 500
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', threaded=True)

@@ -3,14 +3,34 @@ machine:
     - docker
   python:
     version: 2.7.10
+  environment:
+      APP_SETTINGS: config.DevelopmentConfig
+      PYTHONPATH: /home/ubuntu/todoapp-flask
 
 dependencies:
   override:
     - pip install docker-compose==1.3.3
     - pip install selenium
+    - pip install nose
+    - pip install coverage
+    - pip install psycopg2
+    - pip install flask
+    - pip install Flask-SQLAlchemy
+    - pip install locustio
+    - pip install pyzmq
 
 test:
   override:
-    - sudo service postgresql stop; sleep 10
-    - docker-compose up -d; sleep 15
-    - python test/test.py
+    - cd test && nosetests unit_tests.py --with-xunit --with-coverage --cover-inclusive --cover-package=todoapp --cover-html && cd ..
+    - sudo service postgresql stop && sleep 10
+    - docker-compose up -d && sleep 15
+    - python test/functional_tests.py
+    - locust --no-web -c 1 -r 1 -n 4 --only-summary --print-stats
+  post:
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+    - find . -type f -regex ".*/test/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+
+general:
+  artifacts:
+    - "test/cover/index.html"
+    - "test/nosetests.xml"

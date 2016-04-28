@@ -4,6 +4,6 @@ COPY start.sh /
 COPY requirements.txt /
 
 RUN pip install -r requirements.txt && \
-    git clone https://github.com/stefanteixeira/todoapp-flask.git
+    git clone https://github.com/samycici/todoapp-flask.git
 
 ENTRYPOINT ./start.sh
