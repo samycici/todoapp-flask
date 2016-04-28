@@ -1,4 +1,4 @@
-from todoapp.apps import app, db
+from todoapp.apps import app,db
 import unittest
 from todoapp.models import Todo
 
