@@ -1,6 +1,5 @@
 from todoapp.apps import app
 import unittest
-from mock import patch
 
 class ConfigUnitTests(unittest.TestCase):
 
