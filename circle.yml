@@ -30,7 +30,7 @@ test:
     - sudo service postgresql stop && sleep 10
     - docker-compose up -d && sleep 15
     - python todoapp/tests/functional_tests.py
-    - pyresttest http://localhost:5000 api_smoke_tests.yml
+    - pyresttest http://localhost:5000 todoapp/tests/api_smoke_tests.yml
     - locust --no-web -c 1 -r 1 -n 4 --only-summary --print-stats
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
