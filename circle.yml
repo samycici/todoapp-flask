@@ -38,5 +38,5 @@ test:
 
 general:
   artifacts:
-    - "test/cover/index.html"
-    - "test/nosetests.xml"
+    - "todoapp/test/cover/index.html"
+    - "todoapp/test/nosetests.xml"
