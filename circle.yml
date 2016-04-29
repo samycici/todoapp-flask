@@ -23,7 +23,7 @@ dependencies:
 
 test:
   override:
-    - cd todoapp && nosetests tests/unit_tests.py --with-xunit --with-coverage --cover-inclusive --cover-package=todoapp --cover-html
+    - cd todoapp && nosetests  tests/integration_tests.py tests/unit_tests.py --with-xunit --with-coverage --cover-inclusive --cover-package=todoapp --cover-html
     - cd todoapp && nosetests fixtures/fixtures_tests.py --with-xunit
     - sudo service postgresql stop && sleep 10
     - docker-compose up -d && sleep 15
