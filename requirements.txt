@@ -5,3 +5,12 @@ nose
 coverage
 Flask-Migrate
 Flask-Restless
+pyresttest
+selenium
+nose
+coverage
+psycopg2
+locustio
+pyzmq
+flask-fixtures
+PyYAML
