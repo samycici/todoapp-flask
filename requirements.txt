@@ -9,7 +9,6 @@ pyresttest
 selenium
 nose
 coverage
-psycopg2
 locustio
 pyzmq
 flask-fixtures
