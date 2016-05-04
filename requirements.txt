@@ -1,7 +1,6 @@
 psycopg2
 flask
 Flask-SQLAlchemy
-selenium
 nose
 coverage
 Flask-Migrate
