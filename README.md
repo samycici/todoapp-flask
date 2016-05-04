@@ -4,7 +4,7 @@
 Virtualenv
 ------------
 
-To create virtualenv:
+To create virtualenv (Python 2.7):
 
 ```python
 virtualenv todoapp_flask_env
