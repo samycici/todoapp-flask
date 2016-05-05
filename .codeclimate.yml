@@ -1,14 +1,10 @@
 ---
 engines:
-  csslint:
-    enabled: true
   duplication:
     enabled: true
     config:
       languages:
       - python
-  eslint:
-    enabled: true
   fixme:
     enabled: true
   radon:
