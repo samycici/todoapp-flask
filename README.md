@@ -12,7 +12,7 @@ virtualenv todoapp_flask_env
 
 To activate virtualenv:
 
-```python
+```
 source todoapp_flask_env/bin/activate
 ```
 
