@@ -1,4 +1,4 @@
-# todoapp-flask [![Circle CI](https://circleci.com/gh/samycici/todoapp-flask.svg?style=shield)](https://circleci.com/gh/samycici/todoapp-flask) [![Code Climate](https://codeclimate.com/github/samycici/todoapp-flask.png)](https://codeclimate.com/github/samycici/todoapp-flask)
+# todoapp-flask [![Circle CI](https://circleci.com/gh/samycici/todoapp-flask.svg?style=shield)](https://circleci.com/gh/samycici/todoapp-flask) [![Code Climate](https://codeclimate.com/github/samycici/todoapp-flask.png)](https://codeclimate.com/github/samycici/todoapp-flask) [![Test Coverage](https://codeclimate.com/github/samycici/todoapp-flask/badges/coverage.svg)](https://codeclimate.com/github/samycici/todoapp-flask/coverage) 
 
 
 Virtualenv
