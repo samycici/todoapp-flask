@@ -22,10 +22,12 @@ dependencies:
     - pip install pyzmq
     - pip install flask-fixtures
     - pip install PyYAML
+    - pip install codeclimate-test-reporter
 
 test:
   override:
     - cd todoapp && nosetests  tests/integration_tests.py tests/unit_tests.py --with-xunit --with-coverage --cover-inclusive --cover-package=todoapp --cover-html
+    - CODECLIMATE_REPO_TOKEN=259ac9e57ad4aed8a8f92fd36664cf3aef2a9662402a2038b406caa918e2254f codeclimate-test-reporter
     - cd todoapp && nosetests fixtures/fixtures_tests.py --with-xunit
     - sudo service postgresql stop && sleep 10
     - docker-compose up -d && sleep 15
