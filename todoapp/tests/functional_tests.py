@@ -18,13 +18,13 @@ class ToDoFunctionalTests(unittest.TestCase):
         text = self.driver.find_element_by_id("text")
         btn_create = self.driver.find_element_by_id("save")
 
-        title.send_keys("New TODO")
+        title.send_keys("New Todo")
         text.send_keys("Describe the task clearly")
         btn_create.click()
 
         assert self.driver.current_url == u'http://localhost:5000/'
         page_source = self.driver.page_source
-        assert "New TODO" in page_source
+        assert "New Todo" in page_source
         assert "Describe the task clearly" in page_source
 
     def tearDown(self):

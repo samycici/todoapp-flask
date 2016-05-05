@@ -15,8 +15,8 @@ class ToDoFixturesTests(unittest.TestCase, FixturesMixin):
 
     def test_exist_todo_first(self):
         todo1 = Todo.query.first()
-        self.assertEquals(todo1.title, 'Fixture TODO 1')
-        self.assertEquals(todo1.text, 'Fixture TODO 1 - Text')
+        self.assertEquals(todo1.title, 'Fixture Todo 1')
+        self.assertEquals(todo1.text, 'Fixture Todo 1 - Text')
 
 if __name__ == "__main__":
     unittest.main()
