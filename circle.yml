@@ -26,7 +26,6 @@ dependencies:
 
 test:
   override:
-    - patch < codeclimate-config.patch
     - cd todoapp && nosetests  tests/integration_tests.py tests/unit_tests.py --with-xunit --with-coverage --cover-inclusive --cover-package=todoapp --cover-html
     - cd todoapp && CODECLIMATE_REPO_TOKEN=259ac9e57ad4aed8a8f92fd36664cf3aef2a9662402a2038b406caa918e2254f codeclimate-test-reporter
     - cd todoapp && nosetests fixtures/fixtures_tests.py --with-xunit
