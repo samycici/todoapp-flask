@@ -10,19 +10,8 @@ machine:
 dependencies:
   override:
     - sudo apt-get install python-pycurl
-    - pip install pyresttest
     - pip install docker-compose==1.3.3
-    - pip install selenium
-    - pip install nose
-    - pip install coverage
-    - pip install psycopg2
-    - pip install flask
-    - pip install Flask-SQLAlchemy
-    - pip install locustio
-    - pip install pyzmq
-    - pip install flask-fixtures==0.3.3
-    - pip install PyYAML
-    - pip install codeclimate-test-reporter
+    - pip install -r requirements.txt
 
 test:
   override:
