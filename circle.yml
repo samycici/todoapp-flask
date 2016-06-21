@@ -20,7 +20,7 @@ dependencies:
     - pip install Flask-SQLAlchemy
     - pip install locustio
     - pip install pyzmq
-    - pip install flask-fixtures
+    - pip install flask-fixtures==0.3.3
     - pip install PyYAML
     - pip install codeclimate-test-reporter
 
