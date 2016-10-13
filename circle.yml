@@ -24,8 +24,8 @@ test:
     - pyresttest http://localhost:5001 todoapp/tests/api_smoke_tests.yml
     - cd todoapp/tests/ && locust --no-web -c 1 -r 1 -n 4 --only-summary --print-stats
   post:
-    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
-    - find . -type f -regex ".*/todoapp/test/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+    - mkdir -p $CIRCLE_ARTIFACTS/junit/
+    - find . -type f -regex ".*/todoapp/test/.*xml" -exec cp {} $CIRCLE_ARTIFACTS/junit/ \;
 
 general:
   artifacts:
