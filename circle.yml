@@ -9,7 +9,6 @@ machine:
 
 dependencies:
   override:
-    - sudo apt-get install python-pycurl
     - pip install docker-compose==1.3.3
     - pip install -r requirements.txt
 
