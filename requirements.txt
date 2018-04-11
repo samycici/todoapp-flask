@@ -12,3 +12,4 @@ pyzmq==15.2.0
 flask-fixtures==0.3.3
 PyYAML==3.11
 codeclimate-test-reporter==0.1.0
+prospector==0.12.7
